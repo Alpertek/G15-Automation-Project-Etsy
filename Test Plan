@@ -1,0 +1,123 @@
+PROJECT NAME:
+GitHub Test Automation Collaboration
+
+SPRINT NAME:
+Etsy
+
+SPRINT TIME SPAN:
+Kick off  : 07/01/2021
+Terminate : 07/06/2021
+6 days SPRINT(end of the sprint we can discuss our "lessons learn" at weekly meeting-->Tuesday 21.00)
+
+DESCRIPTION:
+-This testcases are for practicing Test Automation over the VCS collaboration among our team.
+-Clone the repository to your local repo.
+-Choose a TC and make the team members know which case belongs to you. (Use comment feature and DISCORD)
+-Create your class name respective to your test case(will be assigned to you).
+    "TC"+TC NO + TCNAME + GitHubAccountName (add UnderScores inbetween)
+    (exp: TC001Login_uguryilmazer)
+-Everybody will create a branch and work on it. I will have the master branch. Then we will merge one by one all
+ branches to the master and finally create our test case folder.
+-Please practice fetch, commit, push and pull request.
+
+CAUTION:
+- Please push your TC with your branch, NOT master branch!
+- Update your project before you start working TC
+
+PRE CONDITIONS:
+- There will be a pom.xml file in which the necessary dependencies has already been added
+- .gitignore file is set and ready.
+- Make sure your computer language is English.
+
+TEST CASES:
+
+Test Case 001 : Jewelry & Accessories
+	1. Go to Etsy.com ( Chrome and Firefox only )
+	2. Click on "Jewelry & Accessories" product category title
+	3. Select "Free Shipping" checkbox from under the "Special offers" options on the left
+	4. Verify that the checkbox is selected and current url contains "free_shipping=true"
+Test Case 002 : Clothing & Shoes
+	1.Go to Etsy.com ( Chrome and Firefox only )
+	2.Click on "Clothing & Shoes" product category title
+	3.Select "1 business day" checkbox from under the "Ready to ship in" options on the left
+	4.Verify that the checkbox is selected and current url contains "max_processing_days=1"
+Test Case 003 : Home & Living
+	1.Go to Etsy.com ( Chrome and Firefox only )
+	2.Click on "Home & Living" product category title
+	3.Sort results by "Lowest Price" by selecting from the dropdown ("Sort by: Relevancy") on the right side
+	4. Verify that visible text of the selected filter of the dropdown is "Sort by: Lowest Price" and url contains "order=price_asc"
+Test Case 004 : Wedding & Party
+	1.Go to Etsy.com ( Chrome and Firefox only )
+	2.Click on "Wedding & Party" product category title
+	3.Click the inputbox the placeholder text of which is "Low" under Price option on the right side
+	4.Verify that "Custom" radio button is selected after inputbox is clicked
+Test Case 005 : Toys & Entertainment
+	1.Go to Etsy.com ( Chrome and Firefox only )
+	2.Click on "Toys & Entertainment" product category title
+	3.Verify that "Green" option is not visible under Color option on the right side
+	4.Click on "Show more" under color options
+	5.Verify that Green" option is visible
+	6.Select "Green" option
+	7.Verify that Green" option is selected
+Test Case 006 : search white board
+	1. Go to Etsy.com ( Chrome and Firefox only )
+	2. Enter "white board" in the search box
+	3. Click on the search button
+	4. Click and open the first search result
+	5. Click on "Add to cart" button
+	6. Verify that there is "1 item in your cart".
+	7. Remove product from cart by clicking on "Remove"
+	8. Verify that the cart is empty
+Test Case 007 : Arts & Collectibles
+	1.Go to Etsy.com
+	2.Click on "Arts & Collectibles" category title
+	3.Select "Europe" under Shop location options on the left side
+	4.Verify that "Europe" is selected
+	5.Click on the textbox and enter "Turkey"
+	6.Click on ">" sign(arrow)
+	7.Verify that "Turkey" option is selected
+Test Case 008 : Craft Supplies & Tools
+	1.Go to Etsy.com
+	2.Click on "Craft Supplies & Tools" category title
+	3.Click on "Paper, Party & Kids" subcategory on the left
+	4.Verify that current url contains "craft-supplies-and-tools/paper-party-and-kids"
+	5.Select "Baby shower" option under "Occasion" options
+	6.Verify that it is selected
+Test Case 009 : search sunglasses - Handmade
+	1.Go to Etsy.com
+	2.Enter "sunglasses" in the search box
+	3.Click on "All Filters" on the left side
+	4.Click on "Handmade" option under Item type title
+	5.Click on "Apply" button
+	6.Click and open the first product which is on the top-left, among results
+	7.Verify that "Handmade" expression is available under Highlights mini-title in the product detail page
+Test Case 010 :	Add to cart
+	1.Go to "https://www.etsy.com/listing/955159345/retro-rectangle-vintage-sunglasses"
+	2.Click on "Add to cart" button
+	3.Verify that the warning message "Please select a color" is visible above "Add to cart" button
+	4.Select "Black" from Primary Color options
+	5.Verify that "Black" is selected
+	6.Click on "Add to cart" button
+	7.Verify that current url starts with "https://www.etsy.com/cart/?show_cart"
+Test Case 011:
+	1.Go to Etsy.com
+	2.Click on "Vintage" category
+	3.Select "China" option under "Ship to" options
+	4.Verify that "China" is selected and current url contains "ship_to=CN".
+Test Case 012:
+	1.Go to Etsy.com
+	2.Search for "living room furniture"
+	3.Click on "All Filters" on the left side
+	3.Select "Can be gift-wrapped" and "Customizable" options under "Ordering options"
+	4.Click on "Apply" button
+	5.Verify that "Can be gift-wrapped X" and "Customizable X" are there below "All Filters" label
+
+- Inform team-leads via discord
+- Execute test case with IntelliJ IDE (create commit history then Push or Pull Request)
+- Use TestNG as a tool
+
+NOTES:
+- Usage of "BeforeMethod, AfterMethod, AfterClass" methods are strongly advised.
+- Assert methods should be used
+- If any offers or suggestions about Sprint, please inform us for updating test plan.
+

@@ -12,7 +12,10 @@ public class TC001_HarunTekin {
     public void setup(){
 
     }
+    @AfterClass
+    public void quitDriver(){
 
+    }
     @AfterMethod
     public void closeDriver(){
 
@@ -23,8 +26,7 @@ public class TC001_HarunTekin {
 
 
     }
-    @AfterClass
-    public void quitDriver(){
 
-    }
+
+
 }
