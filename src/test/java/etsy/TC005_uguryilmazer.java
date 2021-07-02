@@ -1,5 +1,6 @@
 package etsy;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -17,11 +18,12 @@ public class TC005_uguryilmazer {
     @AfterMethod
     public void closeDriver() throws InterruptedException {
     Thread.sleep(2000);
-    driver.close();
+    //driver.close();
     }
     @Test
     public void testcase001(){
     driver.get("https://www.etsy.com/");
+    driver.findElement(By.cssSelector("#catnav-primary-link-11049")).click();
 
 
     }
