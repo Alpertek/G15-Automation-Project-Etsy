@@ -25,10 +25,6 @@ public class TC008_CraftSuppliesToolsCategoryTitle_erencengel {
 
     WebDriver driver;
 
-    public static void main(String[] args) {
-
-    }
-
     @BeforeMethod
     public void setDriver() throws InterruptedException {
         driver = BrowserFactory.getDriver("chrome");
