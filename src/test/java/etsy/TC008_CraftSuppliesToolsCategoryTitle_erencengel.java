@@ -1,11 +1,9 @@
 package etsy;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -41,8 +39,8 @@ public class TC008_CraftSuppliesToolsCategoryTitle_erencengel {
     @Test
     public void test1() throws InterruptedException {
         driver.findElement(By.cssSelector("#catnav-primary-link-562")).click();
-        WebElement paperİcon = driver.findElement(By.xpath("//span[text()='Paper, Party & Kids ']"));
-        paperİcon.click();
+        WebElement paperIcon = driver.findElement(By.xpath("//span[text()='Paper, Party & Kids ']"));
+        paperIcon.click();
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
         String Url = driver.getCurrentUrl();
         Assert.assertTrue(Url.contains("craft-supplies-and-tools/paper-party-and-kids"), "verify that Url contains craft-supplies-and-tools/paper-party-and-kids");
