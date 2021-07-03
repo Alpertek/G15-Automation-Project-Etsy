@@ -59,8 +59,6 @@ public class TC010_BerkerTklac {
 
         WebElement selectColor = driver.findElement(By.xpath("//select[@id='inventory-variation-select-0']"));
 
-        selectColor.click();
-
         Select color = new Select(selectColor);
 
         String expectedResult = "Black";
@@ -83,11 +81,11 @@ public class TC010_BerkerTklac {
 
         Thread.sleep(3000);
 
-        String expectedUrl = driver.getCurrentUrl();
+        String expectedUrl = "https://www.etsy.com/cart/?show_cart";
 
-        String actualUrl = "https://www.etsy.com/cart/?show_cart";
+        String actualUrl = driver.getCurrentUrl();
 
-        Assert.assertTrue(expectedUrl.startsWith(actualUrl),"verify that url start with actual url");
+        Assert.assertTrue(actualUrl.startsWith(expectedUrl),"verify that url start with actual url");
 
 
 
