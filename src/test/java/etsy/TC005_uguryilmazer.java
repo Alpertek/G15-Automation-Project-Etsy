@@ -22,10 +22,10 @@ public class TC005_uguryilmazer {
     @AfterMethod
     public void closeDriver() throws InterruptedException {
     Thread.sleep(2000);
-    //driver.close();
+    driver.close();
     }
     @Test
-    public void testcase005(){
+    public void testcase005() throws InterruptedException {
     driver.get("https://www.etsy.com/");
     driver.findElement(By.cssSelector("#catnav-primary-link-11049")).click();
         //List<WebElement> color1 = driver.findElements(By.xpath("//input[@name='attr_1']"));
