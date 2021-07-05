@@ -63,6 +63,8 @@ public class TC012_htcaygl {
             Assert.assertTrue(driver.findElement(By.xpath("//a[@aria-label='Remove Can be gift-wrapped Filter']")).isDisplayed(),"Verify that \"Can be gift-wrapped Filter\" message on the page");
             Assert.assertTrue(driver.findElement(By.xpath("//a[@aria-label='Remove Customisable Filter']")).isDisplayed(), "Verify that \"Customizable X\" message on the page");
 
+
+            //added
         }
 }
 
