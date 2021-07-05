@@ -2,11 +2,15 @@ package etsy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.BrowserFactory;
+
+import java.util.List;
 
 public class TC012_htcaygl {
 
@@ -43,8 +47,7 @@ public class TC012_htcaygl {
             // 3.Click on "All Filters" on the left side
             driver.findElement(By.id("search-filter-button")).click();
 
-
-            // driver.findElement(By.id("gift-wrap")).click();
+            // driver.findElement(By.id("gift-wrap")).click();  // This is not working. Click intercepted error.
 
             Thread.sleep(2000);  // It is needed for click 'gift-wrap' element
 
@@ -53,17 +56,12 @@ public class TC012_htcaygl {
             actions1.moveToElement(driver.findElement(By.id("gift-wrap"))).click().build().perform() ;
             actions1.moveToElement(driver.findElement(By.id("customizable"))).click().build().perform() ;
 
-
-            //driver.findElement(By.id("customizable")).click();
-
             driver.findElement(By.xpath("//button[@class='wt-btn wt-btn--primary wt-width-full wt-mt-xs-3 wt-mb-xs-3 wt-mr-xs-3']")).click();
 
-            // Thread.sleep(2000);
+            Thread.sleep(3000);  //  When this is not added, the following elements can not be displayed.
 
-            //   driver.findElement(By.xpath("//a[@aria-label='Remove Can be gift-wrapped Filter']")).click();
-            //  driver.findElement(By.xpath("(//a[@class='wt-btn wt-action-group__item wt-btn--small wt-display-flex-xs wt-align-items-center'])[1]")).click();
-
-            Thread.sleep(2000);
+            Assert.assertTrue(driver.findElement(By.xpath("//a[@aria-label='Remove Can be gift-wrapped Filter']")).isDisplayed(),"Verify that \"Can be gift-wrapped Filter\" message on the page");
+            Assert.assertTrue(driver.findElement(By.xpath("//a[@aria-label='Remove Customisable Filter']")).isDisplayed(), "Verify that \"Customizable X\" message on the page");
 
         }
 }
