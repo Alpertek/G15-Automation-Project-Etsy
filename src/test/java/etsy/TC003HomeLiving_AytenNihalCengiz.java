@@ -2,10 +2,7 @@ package etsy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,11 +23,10 @@ public class TC003HomeLiving_AytenNihalCengiz {
         driver = BrowserFactory.getDriver("chrome");
     }
 
-    @AfterClass
+    @AfterMethod
     public void quit() {
         driver.quit();
     }
-
 
     @Test
     public void tc003() throws InterruptedException {
@@ -41,22 +37,21 @@ public class TC003HomeLiving_AytenNihalCengiz {
         driver.findElement(By.id("catnav-primary-link-891")).click();
         Thread.sleep(2000);
 
-         WebElement element = driver.findElement(By.xpath("//span[@class='wt-menu__trigger__label']")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Sort by: Relevancy')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Lowest Price')]")).click();
         Thread.sleep(2000);
 
-        Select order = new Select(element);
-        order.selectByVisibleText("Sort by: Lowest Price");
-        Thread.sleep(2000);
+        String expectedResult = "Sort by: Lowest Price";
+        String visibleText = driver.findElement(By.xpath("//span[text()='Sort by: Lowest Price']")).getText();
 
-        String expedtedResult = "Sort by: Lowest Price";
+        Assert.assertTrue(visibleText.equals(expectedResult), "Visible Text Verified!");
 
-        element = driver.findElement(By.xpath("//span[@class='wt-menu__trigger__label']"));
-        order = new Select(element);
-        String actualResult = order.getFirstSelectedOption().getText();
-        Assert.assertEquals(actualResult,expedtedResult, "Verify that the order is 'Sort by: Lowest Price' ");
-        boolean result = driver.getCurrentUrl().contains("order=price_asc");
-        Assert.assertTrue(result, "Verify that the current url contains 'order=price_asc' ");
-    }
+        String currentUrl = driver.getCurrentUrl();
+        String expectedInUrl = "order=price_asc";
+
+        Assert.assertTrue(currentUrl.contains(expectedInUrl), "URL contains expectedInUrl");
 
     }
+
+}
 
