@@ -20,7 +20,7 @@ public class TC002_Mmsezgin {
 	4.Verify that the checkbox is selected and current url contains "max_processing_days=1"
      */
 
-    WebDriver driver = BrowserFactory.getDriver("chrome");
+    WebDriver driver;
 
     @AfterClass
     public void quit(){
@@ -43,18 +43,18 @@ public class TC002_Mmsezgin {
         driver.manage().window().maximize();
 
         driver.findElement(By.id("catnav-primary-link-10923")).click();
-        driver.findElement(By.id("max-processing-days-1")).click();
         Thread.sleep(3000);
 
-        WebElement checkboxes = driver.findElement(By.id("max-processing-days-1"));
-        Assert.assertTrue(checkboxes.isSelected(),"verify that 1 business day is selected");
-        System.out.println("checkboxes.isSelected() = " + checkboxes.isSelected());
-        Thread.sleep(3000);
 
-        //System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
+        // Using labels to locate, because checkbox failed to be clicked.
+        driver.findElement(By.cssSelector("label[for='max-processing-days-1']")).click();
+
+        Thread.sleep(3000);
+        WebElement checkbox = driver.findElement(By.id("max-processing-days-1"));
+        Assert.assertTrue(checkbox.isSelected(),"verify that 1 business day is selected");
+
         String Url = driver.getCurrentUrl();
-        Assert.assertTrue(Url.contains("clothing-and-shoes"), "verify that Url contains clothing-and-shoes");
-        Thread.sleep(3000);
+        Assert.assertTrue(Url.contains("max_processing_days=1"), "verify that Url contains max_processing_days=1");
 
 
     }
