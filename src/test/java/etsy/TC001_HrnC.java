@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import utilities.WebDriverFactory;
+import utilities.BrowserFactory;
 
 public class TC001_HrnC {
 
@@ -23,7 +23,7 @@ public class TC001_HrnC {
 
     @BeforeMethod
     public void setUp(){
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver("chrome");
     }
 
     @AfterMethod
