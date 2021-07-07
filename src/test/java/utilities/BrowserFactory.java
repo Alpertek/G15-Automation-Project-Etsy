@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserFactory {
-
     private BrowserFactory(){}
     private static final String OS = System.getProperty("os.name").toLowerCase();
 
@@ -59,6 +58,7 @@ public class BrowserFactory {
                     driver = new SafariDriver();
                     break;
             }
+
         }
         return driver;
     }
