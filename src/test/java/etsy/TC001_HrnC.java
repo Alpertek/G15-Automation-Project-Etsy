@@ -33,7 +33,7 @@ public class TC001_HrnC {
     }
 
     @Test
-    public void test1() throws InterruptedException {
+    public void test() throws InterruptedException {
 
         driver.get("https://www.etsy.com/");
 
@@ -42,23 +42,28 @@ public class TC001_HrnC {
 
         Thread.sleep(2000);
 
-        //WebElement checkBoxFreeShip = driver.findElement(By.xpath("//input[@name='free_shipping']"));
-        WebElement checkBoxFreeShip = driver.findElement(By.xpath("//label[@for='special-offers-free-shipping']"));
+        //WebElement labelFreeShip = driver.findElement(By.xpath("//input[@name='free_shipping']"));
+        WebElement labelFreeShip = driver.findElement(By.xpath("//label[@for='special-offers-free-shipping']"));
 
+        WebElement checkboxFreeShipping = driver.findElement(By.xpath("//input[@name='free_shipping']"));
+        Assert.assertFalse(checkboxFreeShipping.isSelected(),"verify checkboxFreeShipping is NOT selected");
 
         //How to verify checkbox is selected or not?
-       //System.out.println("checkBoxFreeShip.isSelected() = " + checkBoxFreeShip.isSelected());
+        System.out.println("checkboxFreeShipping.isSelected() = " + checkboxFreeShipping.isSelected());
 
-        //verify checkBoxFreeShip is selected
-       //Assert.assertTrue(checkBoxFreeShip.isSelected(),"verify checkBoxFreeShip is selected");
+        //verify checkboxFreeShipping is selected
+       //Assert.assertFalse(checkboxFreeShipping.isSelected(),"verify checkboxFreeShipping is selected");
 
         //how to check checkboxes?
         //just like a radio button, we use click() method
         //Thread.sleep(2000);
-        checkBoxFreeShip.click();
+        labelFreeShip.click();
+
+        Thread.sleep(2000);
+        checkboxFreeShipping = driver.findElement(By.xpath("//input[@name='free_shipping']"));
 
         //verify after click
-        Assert.assertTrue(checkBoxFreeShip.isSelected(),"verify checkBoxFreeShip is selected");
+        Assert.assertTrue(checkboxFreeShipping.isSelected(),"verify checkboxFreeShipping is selected");
 
     }
 
