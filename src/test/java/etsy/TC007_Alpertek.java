@@ -34,7 +34,7 @@ public class TC007_Alpertek {
         art_collectibles.click();
         WebElement europe = driver.findElement(By.id("shop-location-input-1"));
         Actions mouse = new Actions(driver);
-        mouse.moveToElement(europe).click().build().perform();
+        mouse.moveToElement(europe).click().perform();
 
         europe = driver.findElement(By.id("shop-location-input-1"));
 
